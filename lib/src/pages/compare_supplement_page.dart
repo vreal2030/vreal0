@@ -75,7 +75,7 @@ class _CompareSupplementState extends State<CompareSupplement> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('영양제 비교'),
+        title: const Text('영양제 비교'),
         centerTitle: false,
       ),
       body: Padding(
@@ -83,7 +83,7 @@ class _CompareSupplementState extends State<CompareSupplement> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Align(
+            const Align(
               alignment: Alignment.bottomLeft,
               child: Text(
                 '블랙마카',
@@ -93,13 +93,13 @@ class _CompareSupplementState extends State<CompareSupplement> {
                     fontSize: 36),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Wrap(
               runSpacing: 10,
               spacing: 4,
               children: [...effectList.map((e) => Chip(label: Text(e)))],
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Expanded(
               child: ListView.builder(
                 itemCount: makkaList.length,
@@ -108,7 +108,7 @@ class _CompareSupplementState extends State<CompareSupplement> {
                   List<String> ingredientList =
                       makkaList[index]['ingredientList'];
                   return Padding(
-                    padding: EdgeInsets.only(bottom: 14),
+                    padding: const EdgeInsets.only(bottom: 14),
                     child: Row(
                       children: [
                         Stack(
@@ -120,22 +120,22 @@ class _CompareSupplementState extends State<CompareSupplement> {
                             )
                           ],
                         ),
-                        SizedBox(width: 10),
+                        const SizedBox(width: 10),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
                               '${makkaList[index]['name']} 이름',
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 18, fontWeight: FontWeight.bold),
                             ),
-                            SizedBox(height: 4),
+                            const SizedBox(height: 4),
                             Text(
-                              '${ingredientList.join(", ")}',
-                              style: TextStyle(
+                              ingredientList.join(", "),
+                              style: const TextStyle(
                                   fontSize: 14, fontWeight: FontWeight.normal),
                             ),
-                            SizedBox(height: 4),
+                            const SizedBox(height: 4),
                             Wrap(
                               spacing: 6,
                               runSpacing: 10,

@@ -60,7 +60,7 @@ class Home extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => CompareSupplement(),
+                              builder: (context) => const CompareSupplement(),
                             ));
                       },
                       child: Text(
@@ -73,7 +73,7 @@ class Home extends StatelessWidget {
                 },
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             const Center(
                 child: Text(
               '칼럼',
@@ -83,14 +83,14 @@ class Home extends StatelessWidget {
                 fontFamily: 'Gmarket Sans',
               ),
             )),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
                   ...columnList.map((e) {
                     return Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
                       child: Column(
                         children: [
                           Container(
@@ -98,20 +98,20 @@ class Home extends StatelessWidget {
                             height: 100,
                             color: Colors.grey,
                           ),
-                          SizedBox(height: 6),
+                          const SizedBox(height: 6),
                           Align(
                             alignment: Alignment.center,
                             child: Text(
-                              '${e}',
-                              style: TextStyle(
+                              e,
+                              style: const TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 14),
                             ),
                           ),
                           Align(
                             alignment: Alignment.center,
                             child: Text(
-                              '${e} 부제목이야',
-                              style: TextStyle(
+                              '$e 부제목이야',
+                              style: const TextStyle(
                                   fontWeight: FontWeight.normal, fontSize: 12),
                             ),
                           )
@@ -122,7 +122,7 @@ class Home extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
           ],
         ),
       ),
