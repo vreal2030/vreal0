@@ -27,7 +27,8 @@ class App extends StatelessWidget {
             )),
             Expanded(
               child: ListView.separated(
-                padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
                 itemCount: medicineList.length,
                 separatorBuilder: (context, index) {
                   return const SizedBox(height: 20);
@@ -43,7 +44,7 @@ class App extends StatelessWidget {
                       child: Text(
                         medicineList[index],
                         style: const TextStyle(
-                          fontSize: 20,
+                          fontSize: 24,
                           fontWeight: FontWeight.bold,
                         ),
                       ));

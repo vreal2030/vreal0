@@ -13,7 +13,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        fontFamily: 'Pretendard',
+        // fontFamily: 'Pretendard',
+        fontFamily: 'Gmarket Sans',
         colorScheme: ColorScheme.fromSwatch(
             primarySwatch: Colors.grey, brightness: Brightness.dark),
       ),
