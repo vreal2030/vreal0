@@ -78,30 +78,33 @@ class _CompareSupplementState extends State<CompareSupplement> {
         title: const Text('영양제 비교'),
         centerTitle: false,
       ),
-      body: Padding(
-        padding: const EdgeInsets.fromLTRB(20, 40, 20, 0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            const Align(
-              alignment: Alignment.bottomLeft,
-              child: Text(
-                '블랙마카',
-                style: TextStyle(
-                    fontFamily: 'Gmarket Sans',
-                    fontWeight: FontWeight.bold,
-                    fontSize: 36),
+      body: SingleChildScrollView(
+        physics: const ScrollPhysics(),
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(20, 40, 20, 0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              const Align(
+                alignment: Alignment.bottomLeft,
+                child: Text(
+                  '블랙마카',
+                  style: TextStyle(
+                      fontFamily: 'Gmarket Sans',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 36),
+                ),
               ),
-            ),
-            const SizedBox(height: 20),
-            Wrap(
-              runSpacing: 10,
-              spacing: 4,
-              children: [...effectList.map((e) => Chip(label: Text(e)))],
-            ),
-            const SizedBox(height: 20),
-            Expanded(
-              child: ListView.builder(
+              const SizedBox(height: 20),
+              Wrap(
+                runSpacing: 10,
+                spacing: 4,
+                children: [...effectList.map((e) => Chip(label: Text(e)))],
+              ),
+              const SizedBox(height: 20),
+              ListView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
                 itemCount: makkaList.length,
                 itemBuilder: (context, index) {
                   List<String> keywordList = makkaList[index]['keywordList'];
@@ -149,9 +152,9 @@ class _CompareSupplementState extends State<CompareSupplement> {
                     ),
                   );
                 },
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );
