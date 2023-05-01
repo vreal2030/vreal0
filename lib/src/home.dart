@@ -70,7 +70,7 @@ class Home extends StatelessWidget {
               const SizedBox(height: 10),
               const Center(
                   child: Text(
-                '칼럼',
+                '정력 칼럼',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 36,
