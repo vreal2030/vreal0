@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
-  final List<String> medicineList = ['블랙마카', '아르기닌', '소팔메토', '아연'];
+  final List<String> medicineList = ['블랙마카', '아르기닌', '쏘팔메토', '아연'];
 
   App({Key? key}) : super(key: key);
 
@@ -11,7 +11,8 @@ class App extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'vreal',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+          style: TextStyle(
+              fontWeight: FontWeight.w900, fontSize: 24, letterSpacing: -1),
         ),
       ),
       body: Padding(
@@ -23,7 +24,11 @@ class App extends StatelessWidget {
             const Center(
                 child: Text(
               '영양제 비교',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 36,
+                fontFamily: 'Gmarket Sans',
+              ),
             )),
             Expanded(
               child: ListView.separated(
@@ -44,9 +49,9 @@ class App extends StatelessWidget {
                       child: Text(
                         medicineList[index],
                         style: const TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                        ),
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Gmarket Sans'),
                       ));
                 },
               ),

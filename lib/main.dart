@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         // fontFamily: 'Pretendard',
-        fontFamily: 'Gmarket Sans',
+        fontFamily: 'Pretendard',
         colorScheme: ColorScheme.fromSwatch(
             primarySwatch: Colors.grey, brightness: Brightness.dark),
       ),
