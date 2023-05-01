@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vreal_0/src/app.dart';
+import 'package:vreal_0/src/home.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.grey, brightness: Brightness.dark),
       ),
       title: 'vreal',
-      home: App(),
+      home: Home(),
     );
   }
 }
