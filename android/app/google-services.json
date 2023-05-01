@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "568986014154",
+    "project_id": "vreal0",
+    "storage_bucket": "vreal0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:568986014154:android:cd9e23c27b9c7622fc7f33",
+        "android_client_info": {
+          "package_name": "com.example.vreal_0"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "568986014154-7evqfm62j9ep5fsm4e477gb15e6k5j1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7XCPH9114iRsePzwKIUQ60gCPsAP8uA8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "568986014154-7evqfm62j9ep5fsm4e477gb15e6k5j1o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
