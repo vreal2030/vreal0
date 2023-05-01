@@ -15,34 +15,34 @@ class App extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: EdgeInsets.fromLTRB(0, 30, 0, 0),
+        padding: const EdgeInsets.fromLTRB(0, 30, 0, 0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Center(
+            const Center(
                 child: Text(
               '영양제 비교',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
             )),
             Expanded(
               child: ListView.separated(
-                padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+                padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
                 itemCount: medicineList.length,
                 separatorBuilder: (context, index) {
-                  return SizedBox(height: 30);
+                  return const SizedBox(height: 20);
                 },
                 itemBuilder: (context, index) {
                   return ElevatedButton(
                       style: ButtonStyle(
                           padding: MaterialStateProperty.all(
-                              EdgeInsets.symmetric(vertical: 10))),
+                              const EdgeInsets.symmetric(vertical: 30))),
                       onPressed: () {
-                        debugPrint('${medicineList[index]}');
+                        debugPrint(medicineList[index]);
                       },
                       child: Text(
-                        '${medicineList[index]}',
-                        style: TextStyle(
+                        medicineList[index],
+                        style: const TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                         ),
