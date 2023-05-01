@@ -23,7 +23,7 @@ class App extends StatelessWidget {
                   debugPrint('hello1');
                 },
                 child: const Text(
-                  '블랙마카',
+                  '블랙마카_수정됨',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                 )),
             ElevatedButton(
