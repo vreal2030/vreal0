@@ -97,7 +97,7 @@ class _CompareSupplementState extends State<CompareSupplement> {
               ),
               const SizedBox(height: 20),
               Wrap(
-                runSpacing: 10,
+                runSpacing: 4,
                 spacing: 4,
                 children: [...effectList.map((e) => Chip(label: Text(e)))],
               ),
