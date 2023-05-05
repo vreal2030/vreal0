@@ -82,38 +82,40 @@ class _CompareSupplementState extends State<CompareSupplement> {
           title: const Text('영양제 비교'),
           centerTitle: false,
         ),
-        body: SingleChildScrollView(
-          physics: const ScrollPhysics(),
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(20, 40, 20, 0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                const Align(
-                  alignment: Alignment.bottomLeft,
-                  child: Text(
-                    '블랙마카',
-                    style: TextStyle(
-                        fontFamily: 'Gmarket Sans',
-                        fontWeight: FontWeight.bold,
-                        fontSize: 36),
+        body: SafeArea(
+          child: SingleChildScrollView(
+            physics: const ScrollPhysics(),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(20, 40, 20, 0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  const Align(
+                    alignment: Alignment.bottomLeft,
+                    child: Text(
+                      '블랙마카',
+                      style: TextStyle(
+                          fontFamily: 'Gmarket Sans',
+                          fontWeight: FontWeight.bold,
+                          fontSize: 36),
+                    ),
                   ),
-                ),
-                const SizedBox(height: 20),
-                Wrap(
-                  runSpacing: 0,
-                  spacing: 4,
-                  children: [
-                    ...globalKeywordList.map((e) => Chip(label: Text(e)))
-                  ],
-                ),
-                const SizedBox(height: 20),
-                const Text('블랙마카 추출물 함유량 순',
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
-                const SizedBox(height: 20),
-                SupplementListView(supplementList: makkaList)
-              ],
+                  const SizedBox(height: 20),
+                  Wrap(
+                    runSpacing: 0,
+                    spacing: 4,
+                    children: [
+                      ...globalKeywordList.map((e) => Chip(label: Text(e)))
+                    ],
+                  ),
+                  const SizedBox(height: 20),
+                  const Text('블랙마카 추출물 함유량 순',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                  const SizedBox(height: 20),
+                  SupplementListView(supplementList: makkaList)
+                ],
+              ),
             ),
           ),
         ),

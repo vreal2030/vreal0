@@ -27,114 +27,116 @@ class SupplementDetail extends StatelessWidget {
     return CenterConstrainedBox(
       child: Scaffold(
         appBar: AppBar(),
-        body: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Container(
-                height: MediaQuery.of(context).size.width,
-                constraints: const BoxConstraints(maxHeight: 450),
-                color: Colors.grey,
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
-                child: Column(
-                  children: [
-                    const SizedBox(height: 20),
-                    Row(
-                      children: [
-                        const CircleAvatar(backgroundColor: Colors.grey),
-                        const SizedBox(width: 10),
-                        Text(
-                          brand,
-                          style: const TextStyle(color: Colors.grey),
-                        )
-                      ],
-                    ),
-                    const SizedBox(height: 10),
-                    Align(
-                      alignment: Alignment.bottomLeft,
-                      child: Text(
-                        name,
-                        style: const TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 24),
-                      ),
-                    ),
-                    const SizedBox(height: 10),
-                    const Row(
-                      children: [
-                        Icon(
-                          Icons.star,
-                          color: Colors.yellow,
-                        ),
-                        Text(
-                          '4.73',
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        Text(
-                          '(832)',
-                          style: TextStyle(fontWeight: FontWeight.normal),
-                        ),
-                        Icon(
-                          Icons.chevron_right,
-                          color: Colors.black26,
-                        )
-                      ],
-                    ),
-                    const SizedBox(height: 30),
-                    const Align(
-                      alignment: Alignment.bottomLeft,
-                      child: Text(
-                        '성분',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 20),
-                      ),
-                    ),
-                    const SizedBox(height: 10),
-                    const IngredientChipsRow(
-                      ingredient: '블랙마카 추출물',
-                      keywordList: ['면역강화'],
-                    ),
-                    const IngredientChipsRow(
-                      ingredient: '지아닌',
-                      keywordList: ['스트레스 감소', '항산화'],
-                    ),
-                    const IngredientChipsRow(
-                      ingredient: '세로토닌',
-                      keywordList: ['기분개선'],
-                    ),
-                    const SizedBox(height: 30),
-                    const Align(
-                      alignment: Alignment.bottomLeft,
-                      child: Text(
-                        '가격비교',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 20),
-                      ),
-                    ),
-                    const SizedBox(height: 10),
-                    BuySupplementRow(
-                      market: 'G마켓',
-                      price: price,
-                      url:
-                          'https://browse.gmarket.co.kr/search?keyword=${supplement['name']}',
-                    ),
-                    BuySupplementRow(
-                      market: '11번가',
-                      price: price,
-                      url:
-                          'https://search.11st.co.kr/Search.tmall?kwd=${supplement['name']}',
-                    ),
-                    BuySupplementRow(
-                      market: '쿠팡',
-                      price: price,
-                      url:
-                          'https://www.coupang.com/np/search?component=&q=${supplement['name']}',
-                    ),
-                  ],
+        body: SafeArea(
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Container(
+                  height: MediaQuery.of(context).size.width,
+                  constraints: const BoxConstraints(maxHeight: 450),
+                  color: Colors.grey,
                 ),
-              )
-            ],
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
+                  child: Column(
+                    children: [
+                      const SizedBox(height: 20),
+                      Row(
+                        children: [
+                          const CircleAvatar(backgroundColor: Colors.grey),
+                          const SizedBox(width: 10),
+                          Text(
+                            brand,
+                            style: const TextStyle(color: Colors.grey),
+                          )
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      Align(
+                        alignment: Alignment.bottomLeft,
+                        child: Text(
+                          name,
+                          style: const TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 24),
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      const Row(
+                        children: [
+                          Icon(
+                            Icons.star,
+                            color: Colors.yellow,
+                          ),
+                          Text(
+                            '4.73',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            '(832)',
+                            style: TextStyle(fontWeight: FontWeight.normal),
+                          ),
+                          Icon(
+                            Icons.chevron_right,
+                            color: Colors.black26,
+                          )
+                        ],
+                      ),
+                      const SizedBox(height: 30),
+                      const Align(
+                        alignment: Alignment.bottomLeft,
+                        child: Text(
+                          '성분',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      const IngredientChipsRow(
+                        ingredient: '블랙마카 추출물',
+                        keywordList: ['면역강화'],
+                      ),
+                      const IngredientChipsRow(
+                        ingredient: '지아닌',
+                        keywordList: ['스트레스 감소', '항산화'],
+                      ),
+                      const IngredientChipsRow(
+                        ingredient: '세로토닌',
+                        keywordList: ['기분개선'],
+                      ),
+                      const SizedBox(height: 30),
+                      const Align(
+                        alignment: Alignment.bottomLeft,
+                        child: Text(
+                          '가격비교',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      BuySupplementRow(
+                        market: 'G마켓',
+                        price: price,
+                        url:
+                            'https://browse.gmarket.co.kr/search?keyword=${supplement['name']}',
+                      ),
+                      BuySupplementRow(
+                        market: '11번가',
+                        price: price,
+                        url:
+                            'https://search.11st.co.kr/Search.tmall?kwd=${supplement['name']}',
+                      ),
+                      BuySupplementRow(
+                        market: '쿠팡',
+                        price: price,
+                        url:
+                            'https://www.coupang.com/np/search?component=&q=${supplement['name']}',
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),
