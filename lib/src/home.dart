@@ -85,9 +85,9 @@ class Home extends StatelessWidget {
                   children: [
                     ...columnList.map((e) {
                       return GestureDetector(
-                        onTap: () {
-                          launchUrl(Uri.parse(
-                              'https://vreal-powerfulman.tistory.com/https://vreal-powerfulman.tistory.com/'));
+                        onTap: () async {
+                          await launchUrl(Uri.parse(
+                              'https://vreal-powerfulman.tistory.com/'));
                         },
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 10),
