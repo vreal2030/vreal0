@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:vreal_0/src/home.dart';
 
 void main() async {
@@ -14,8 +15,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       color: Colors.white,
       theme: ThemeData(
-        appBarTheme:
-            const AppBarTheme(backgroundColor: Colors.white, elevation: 0),
+        appBarTheme: const AppBarTheme(
+            backgroundColor: Colors.white,
+            elevation: 0,
+            systemOverlayStyle: SystemUiOverlayStyle(
+              statusBarColor: Colors.white,
+              statusBarBrightness: Brightness.light,
+            )),
         fontFamily: 'Pretendard',
         colorScheme: ColorScheme.fromSwatch(
             backgroundColor: Colors.white,
