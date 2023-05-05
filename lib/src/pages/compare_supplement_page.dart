@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vreal_0/src/components/center_constrained_box.dart';
 import 'package:vreal_0/src/pages/supplement_detail_page.dart';
 
 final List<String> globalKeywordList = [
@@ -75,42 +76,45 @@ class CompareSupplement extends StatefulWidget {
 class _CompareSupplementState extends State<CompareSupplement> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('영양제 비교'),
-        centerTitle: false,
-      ),
-      body: SingleChildScrollView(
-        physics: const ScrollPhysics(),
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(20, 40, 20, 0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              const Align(
-                alignment: Alignment.bottomLeft,
-                child: Text(
-                  '블랙마카',
-                  style: TextStyle(
-                      fontFamily: 'Gmarket Sans',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 36),
+    return CenterConstrainedBox(
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('영양제 비교'),
+          centerTitle: false,
+        ),
+        body: SingleChildScrollView(
+          physics: const ScrollPhysics(),
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(20, 40, 20, 0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                const Align(
+                  alignment: Alignment.bottomLeft,
+                  child: Text(
+                    '블랙마카',
+                    style: TextStyle(
+                        fontFamily: 'Gmarket Sans',
+                        fontWeight: FontWeight.bold,
+                        fontSize: 36),
+                  ),
                 ),
-              ),
-              const SizedBox(height: 20),
-              Wrap(
-                runSpacing: 0,
-                spacing: 4,
-                children: [
-                  ...globalKeywordList.map((e) => Chip(label: Text(e)))
-                ],
-              ),
-              const SizedBox(height: 20),
-              const Text('블랙마카 추출물 함유량 순',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
-              const SizedBox(height: 20),
-              SupplementListView(supplementList: makkaList)
-            ],
+                const SizedBox(height: 20),
+                Wrap(
+                  runSpacing: 0,
+                  spacing: 4,
+                  children: [
+                    ...globalKeywordList.map((e) => Chip(label: Text(e)))
+                  ],
+                ),
+                const SizedBox(height: 20),
+                const Text('블랙마카 추출물 함유량 순',
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                const SizedBox(height: 20),
+                SupplementListView(supplementList: makkaList)
+              ],
+            ),
           ),
         ),
       ),
