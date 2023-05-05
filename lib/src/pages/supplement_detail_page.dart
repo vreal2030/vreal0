@@ -48,7 +48,8 @@ class SupplementDetail extends StatelessWidget {
                           const SizedBox(width: 10),
                           Text(
                             brand,
-                            style: const TextStyle(color: Colors.grey),
+                            style: const TextStyle(
+                                color: Colors.grey, fontSize: 16),
                           )
                         ],
                       ),
@@ -144,6 +145,7 @@ class SupplementDetail extends StatelessWidget {
   }
 }
 
+// 마켓 - 가격 - 구매하기 Row
 class BuySupplementRow extends StatelessWidget {
   const BuySupplementRow({
     Key? key,
@@ -162,10 +164,10 @@ class BuySupplementRow extends StatelessWidget {
       children: [
         const CircleAvatar(backgroundColor: Colors.grey, radius: 12),
         const SizedBox(width: 10),
-        Text(market, style: const TextStyle(fontSize: 14)),
+        Text(market, style: const TextStyle(fontSize: 16)),
         const SizedBox(width: 10),
         Text('$price 원',
-            style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
         const Spacer(),
         TextButton(
           onPressed: () {
@@ -174,7 +176,7 @@ class BuySupplementRow extends StatelessWidget {
           },
           style: ButtonStyle(
             padding: const MaterialStatePropertyAll(
-                EdgeInsets.symmetric(vertical: 2, horizontal: 10)),
+                EdgeInsets.symmetric(vertical: 2, horizontal: 16)),
             shape: MaterialStatePropertyAll(RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(100))),
             backgroundColor: const MaterialStatePropertyAll(Colors.blue),
@@ -187,6 +189,7 @@ class BuySupplementRow extends StatelessWidget {
   }
 }
 
+// 성분 - 키워드 칩
 class IngredientChipsRow extends StatelessWidget {
   const IngredientChipsRow({
     Key? key,
@@ -205,7 +208,7 @@ class IngredientChipsRow extends StatelessWidget {
         children: [
           Text(
             ingredient,
-            style: const TextStyle(fontSize: 14),
+            style: const TextStyle(fontSize: 16),
           ),
           const SizedBox(width: 20),
           ...keywordList.map((e) => Padding(
