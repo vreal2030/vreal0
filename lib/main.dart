@@ -14,9 +14,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         // fontFamily: 'Pretendard',
+        appBarTheme: AppBarTheme(backgroundColor: Colors.white, elevation: 0),
         fontFamily: 'Pretendard',
         colorScheme: ColorScheme.fromSwatch(
-            primarySwatch: Colors.grey, brightness: Brightness.dark),
+            primarySwatch: Colors.grey, brightness: Brightness.light),
       ),
       title: 'vreal',
       home: Home(),
