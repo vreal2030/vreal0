@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       color: Colors.white,
       theme: ThemeData(
-        materialTapTargetSize: MaterialTapTargetSize.padded,
+        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
         appBarTheme: const AppBarTheme(
             backgroundColor: Colors.white,
             elevation: 0,
