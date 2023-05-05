@@ -47,31 +47,40 @@ class Home extends StatelessWidget {
                     ),
                   )),
                   const SizedBox(height: 20),
-                  ...medicineList.map((e) {
-                    return Padding(
-                      padding: const EdgeInsets.only(bottom: 20),
-                      child: ElevatedButton(
-                          style: ButtonStyle(
-                              padding: MaterialStateProperty.all(
-                                  const EdgeInsets.symmetric(vertical: 30))),
-                          onPressed: () {
-                            debugPrint(e);
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      const CompareSupplement(),
-                                ));
-                          },
-                          child: Text(
-                            e,
-                            style: const TextStyle(
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'Gmarket Sans'),
-                          )),
-                    );
-                  }),
+                  GridView.count(
+                    crossAxisCount: 2,
+                    shrinkWrap: true,
+                    crossAxisSpacing: 20,
+                    mainAxisSpacing: 0,
+                    children: [
+                      ...medicineList.map((e) {
+                        return Padding(
+                          padding: const EdgeInsets.only(bottom: 20),
+                          child: ElevatedButton(
+                              style: ButtonStyle(
+                                  padding: MaterialStateProperty.all(
+                                      const EdgeInsets.symmetric(
+                                          vertical: 30))),
+                              onPressed: () {
+                                debugPrint(e);
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          const CompareSupplement(),
+                                    ));
+                              },
+                              child: Text(
+                                e,
+                                style: const TextStyle(
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'Gmarket Sans'),
+                              )),
+                        );
+                      }),
+                    ],
+                  ),
                   const SizedBox(height: 10),
                   const Center(
                       child: Text(
