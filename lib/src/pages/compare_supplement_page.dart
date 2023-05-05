@@ -67,7 +67,12 @@ final List makkaList = [
 ];
 
 class CompareSupplement extends StatefulWidget {
-  const CompareSupplement({super.key});
+  const CompareSupplement({
+    Key? key,
+    required this.supplementCategoryName,
+  }) : super(key: key);
+
+  final String supplementCategoryName;
 
   @override
   State<CompareSupplement> createState() => _CompareSupplementState();
@@ -90,11 +95,11 @@ class _CompareSupplementState extends State<CompareSupplement> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  const Align(
+                  Align(
                     alignment: Alignment.bottomLeft,
                     child: Text(
-                      '블랙마카',
-                      style: TextStyle(
+                      widget.supplementCategoryName,
+                      style: const TextStyle(
                           fontFamily: 'Gmarket Sans',
                           fontWeight: FontWeight.bold,
                           fontSize: 36),
