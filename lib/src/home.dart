@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:vreal_0/src/pages/compare_supplement_page.dart';
 
 class Home extends StatelessWidget {
@@ -83,34 +84,41 @@ class Home extends StatelessWidget {
                 child: Row(
                   children: [
                     ...columnList.map((e) {
-                      return Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
-                        child: Column(
-                          children: [
-                            Container(
-                              width: 100,
-                              height: 100,
-                              color: Colors.grey,
-                            ),
-                            const SizedBox(height: 6),
-                            Align(
-                              alignment: Alignment.center,
-                              child: Text(
-                                e,
-                                style: const TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 14),
+                      return GestureDetector(
+                        onTap: () {
+                          launchUrl(Uri.parse(
+                              'https://vreal-powerfulman.tistory.com/https://vreal-powerfulman.tistory.com/'));
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          child: Column(
+                            children: [
+                              Container(
+                                width: 100,
+                                height: 100,
+                                color: Colors.grey,
                               ),
-                            ),
-                            Align(
-                              alignment: Alignment.center,
-                              child: Text(
-                                '$e 부제목이야',
-                                style: const TextStyle(
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 12),
+                              const SizedBox(height: 6),
+                              Align(
+                                alignment: Alignment.center,
+                                child: Text(
+                                  e,
+                                  style: const TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 14),
+                                ),
                               ),
-                            )
-                          ],
+                              Align(
+                                alignment: Alignment.center,
+                                child: Text(
+                                  '$e 부제목이야',
+                                  style: const TextStyle(
+                                      fontWeight: FontWeight.normal,
+                                      fontSize: 12),
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       );
                     })
