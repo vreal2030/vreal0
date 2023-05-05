@@ -216,7 +216,6 @@ class IngredientChipsRow extends StatelessWidget {
                 child: Chip(
                   label: Text(
                     e,
-                    style: const TextStyle(fontSize: 12),
                   ),
                 ),
               ))
