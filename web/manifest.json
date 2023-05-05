@@ -1,11 +1,11 @@
 {
-    "name": "vreal_0",
-    "short_name": "vreal_0",
+    "name": "vreal",
+    "short_name": "vreal",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#ffffff",
-    "description": "A new Flutter project.",
+    "description": "vreal - be real man",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
