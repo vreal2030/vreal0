@@ -154,7 +154,7 @@ class IngredientChipsRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+      padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
       child: Row(
         children: [
           Text(
