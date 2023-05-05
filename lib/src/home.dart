@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:vreal_0/src/components/center_constrained_box.dart';
+import 'package:vreal_0/src/pages/admin_home_page.dart';
 import 'package:vreal_0/src/pages/compare_supplement_page.dart';
 
 class Home extends StatelessWidget {
@@ -140,6 +141,16 @@ class Home extends StatelessWidget {
                       ],
                     ),
                   ),
+                  const SizedBox(height: 30),
+                  TextButton(
+                      onPressed: () {
+                        debugPrint('Admin Clicked');
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const AdminHome()));
+                      },
+                      child: Text('Admin')),
                   const SizedBox(height: 30),
                 ],
               ),
