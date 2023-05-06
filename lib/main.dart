@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
             brightness: Brightness.light),
       ),
       title: 'vreal',
-      home: Home(),
+      home: const Home(),
     );
   }
 }

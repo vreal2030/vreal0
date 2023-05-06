@@ -8,17 +8,7 @@ import 'package:vreal_0/src/repository/global_repository.dart';
 import 'package:vreal_0/src/repository/main_contents_repository.dart';
 
 class Home extends StatelessWidget {
-  final List<String> columnList = [
-    '제목1',
-    '제목2',
-    '제목3',
-    '제목4',
-    '제목5',
-    '제목6',
-    '제목7'
-  ];
-
-  Home({Key? key}) : super(key: key);
+  const Home({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -55,34 +45,50 @@ class Home extends StatelessWidget {
                     GridView.count(
                       crossAxisCount: 2,
                       shrinkWrap: true,
-                      crossAxisSpacing: 20,
+                      crossAxisSpacing: 10,
                       mainAxisSpacing: 0,
                       children: [
                         ...value.supplementCategoryList.map((e) {
                           return Padding(
-                            padding: const EdgeInsets.only(bottom: 20),
-                            child: ElevatedButton(
-                                style: ButtonStyle(
-                                    padding: MaterialStateProperty.all(
-                                        const EdgeInsets.symmetric(
-                                            vertical: 30))),
-                                onPressed: () {
-                                  debugPrint(e);
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => CompareSupplement(
-                                          supplementCategoryName: e,
-                                        ),
-                                      ));
-                                },
-                                child: Text(
-                                  e,
-                                  style: const TextStyle(
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: 'Gmarket Sans'),
-                                )),
+                            padding: const EdgeInsets.only(bottom: 10),
+                            child: GestureDetector(
+                              onTap: () {
+                                debugPrint(e['title']);
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => CompareSupplement(
+                                        supplementCategoryName: e['title'],
+                                      ),
+                                    ));
+                              },
+                              child: Stack(
+                                children: [
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(10),
+                                    child: Container(
+                                      color: Colors.black,
+                                      child: Image.network(
+                                        e['imageUrl'],
+                                        fit: BoxFit.cover,
+                                        width: double.infinity,
+                                        height: double.infinity,
+                                      ),
+                                    ),
+                                  ),
+                                  Center(
+                                    child: Text(
+                                      e['title'],
+                                      style: const TextStyle(
+                                          fontSize: 24,
+                                          fontWeight: FontWeight.bold,
+                                          fontFamily: 'Gmarket Sans',
+                                          color: Colors.white),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
                           );
                         }),
                       ],
@@ -115,8 +121,8 @@ class Home extends StatelessWidget {
                                   launchUrl(Uri.parse(url));
                                 },
                                 child: Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 10),
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 5),
                                   child: SizedBox(
                                     width: 100,
                                     child: Column(
