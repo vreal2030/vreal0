@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 import 'package:vreal_0/src/home.dart';
+import 'package:vreal_0/src/repository/global_repository.dart';
+import 'package:vreal_0/src/repository/main_contents_repository.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const MyApp());
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider(create: (context) => GlobalRepository()),
+    ChangeNotifierProvider(create: (context) => MainContentsRepository()),
+  ], child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
