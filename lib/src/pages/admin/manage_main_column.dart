@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:vreal_0/src/components/delete_confirm_alert.dart';
 import 'package:vreal_0/src/repository/main_contents_repository.dart';
 
 class ManageMainColumn extends StatelessWidget {
@@ -37,11 +38,14 @@ class ManageMainColumn extends StatelessWidget {
                     child: Column(
                       children: [
                         ...value.mainColumnList.map((e) => ListTile(
-                              leading: Image.network(
-                                e['imageUrl'],
+                              leading: SizedBox(
                                 width: 50,
-                                height: 50,
-                                fit: BoxFit.cover,
+                                child: Image.network(
+                                  e['imageUrl'],
+                                  width: 50,
+                                  height: 50,
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                               title: Text(e['title']),
                               subtitle: Text(e['subtitle']),
@@ -51,7 +55,20 @@ class ManageMainColumn extends StatelessWidget {
                                   color: Colors.red,
                                 ),
                                 onPressed: () {
-                                  value.removeColumn(e['index']);
+                                  showDialog(
+                                    context: context,
+                                    builder: (context) {
+                                      return DeleteConfirmAlert(
+                                        cancelFunction: () {
+                                          Navigator.pop(context);
+                                        },
+                                        deleteFunction: () {
+                                          value.removeColumn(e['index']);
+                                          Navigator.pop(context);
+                                        },
+                                      );
+                                    },
+                                  );
                                   debugPrint('${e['title']} Column is deleted');
                                 },
                               ),
@@ -61,22 +78,97 @@ class ManageMainColumn extends StatelessWidget {
                   );
                 },
               ),
+              const SizedBox(height: 20),
               // 텍스트필트
-              TextField(
-                controller: titleController,
-                decoration: const InputDecoration(hintText: '칼럼 타이틀 입력'),
+              const Align(
+                alignment: Alignment.bottomLeft,
+                child: Text(
+                  '새 칼럼 등록하기',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
-              TextField(
-                controller: subtitleController,
-                decoration: const InputDecoration(hintText: '서브타이틀 입력'),
+              Row(
+                children: [
+                  const SizedBox(
+                      width: 90,
+                      child: Text(
+                        '칼럼 타이틀',
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.grey),
+                      )),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: TextField(
+                      controller: titleController,
+                      decoration: const InputDecoration(hintText: '칼럼 타이틀 입력'),
+                    ),
+                  ),
+                ],
               ),
-              TextField(
-                controller: urlController,
-                decoration: const InputDecoration(hintText: '칼럼 URL 입력'),
+              Row(
+                children: [
+                  const SizedBox(
+                      width: 90,
+                      child: Text(
+                        '서브타이틀',
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.grey),
+                      )),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: TextField(
+                      controller: subtitleController,
+                      decoration: const InputDecoration(hintText: '서브타이틀 입력'),
+                    ),
+                  ),
+                ],
               ),
-              TextField(
-                controller: imageUrlController,
-                decoration: const InputDecoration(hintText: '이미지 URL 입력'),
+              Row(
+                children: [
+                  const SizedBox(
+                      width: 90,
+                      child: Text(
+                        '칼럼 URL',
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.grey),
+                      )),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: TextField(
+                      controller: urlController,
+                      decoration: const InputDecoration(hintText: '칼럼 URL 입력'),
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  const SizedBox(
+                      width: 90,
+                      child: Text(
+                        '이미지 URL',
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.grey),
+                      )),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: TextField(
+                      controller: imageUrlController,
+                      decoration: const InputDecoration(hintText: '이미지 URL 입력'),
+                    ),
+                  ),
+                ],
               ),
               // 버튼
               Row(

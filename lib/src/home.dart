@@ -103,6 +103,7 @@ class Home extends StatelessWidget {
                       child: Consumer<MainContentsRepository>(
                           builder: (context, value, child) {
                         return Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             ...value.mainColumnList.map((e) {
                               String title = e['title'];
@@ -116,34 +117,37 @@ class Home extends StatelessWidget {
                                 child: Padding(
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 10),
-                                  child: Column(
-                                    children: [
-                                      Image.network(
-                                        imageUrl,
-                                        width: 100,
-                                        height: 100,
-                                        fit: BoxFit.cover,
-                                      ),
-                                      const SizedBox(height: 6),
-                                      Align(
-                                        alignment: Alignment.center,
-                                        child: Text(
-                                          title,
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 14),
+                                  child: SizedBox(
+                                    width: 100,
+                                    child: Column(
+                                      children: [
+                                        Image.network(
+                                          imageUrl,
+                                          width: 100,
+                                          height: 100,
+                                          fit: BoxFit.cover,
                                         ),
-                                      ),
-                                      Align(
-                                        alignment: Alignment.center,
-                                        child: Text(
-                                          subtitle,
-                                          style: const TextStyle(
-                                              fontWeight: FontWeight.normal,
-                                              fontSize: 12),
+                                        const SizedBox(height: 6),
+                                        Align(
+                                          alignment: Alignment.center,
+                                          child: Text(
+                                            title,
+                                            style: const TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 14),
+                                          ),
                                         ),
-                                      )
-                                    ],
+                                        Align(
+                                          alignment: Alignment.center,
+                                          child: Text(
+                                            subtitle,
+                                            style: const TextStyle(
+                                                fontWeight: FontWeight.normal,
+                                                fontSize: 12),
+                                          ),
+                                        )
+                                      ],
+                                    ),
                                   ),
                                 ),
                               );
