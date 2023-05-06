@@ -129,11 +129,15 @@ class Home extends StatelessWidget {
                                     width: 100,
                                     child: Column(
                                       children: [
-                                        Image.network(
-                                          imageUrl,
-                                          width: 100,
-                                          height: 100,
-                                          fit: BoxFit.cover,
+                                        ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          child: Image.network(
+                                            imageUrl,
+                                            width: 100,
+                                            height: 100,
+                                            fit: BoxFit.cover,
+                                          ),
                                         ),
                                         const SizedBox(height: 6),
                                         Align(
