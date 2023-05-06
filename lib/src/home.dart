@@ -62,11 +62,11 @@ class Home extends StatelessWidget {
                                       ),
                                     ));
                               },
-                              child: Stack(
-                                children: [
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(10),
-                                    child: Container(
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(10),
+                                child: Stack(
+                                  children: [
+                                    Container(
                                       color: Colors.black,
                                       child: Image.network(
                                         e['imageUrl'],
@@ -75,25 +75,27 @@ class Home extends StatelessWidget {
                                         height: double.infinity,
                                       ),
                                     ),
-                                  ),
-                                  Center(
-                                    child: Text(
-                                      e['title'],
-                                      style: const TextStyle(
-                                          fontSize: 24,
-                                          fontWeight: FontWeight.bold,
-                                          fontFamily: 'Gmarket Sans',
-                                          color: Colors.white),
+                                    Container(
+                                        color: Colors.black.withOpacity(0.4)),
+                                    Center(
+                                      child: Text(
+                                        e['title'],
+                                        style: const TextStyle(
+                                            fontSize: 24,
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'Gmarket Sans',
+                                            color: Colors.white),
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           );
                         }),
                       ],
                     ),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: 20),
                     Center(
                         child: Text(
                       value.columnListTitle,
