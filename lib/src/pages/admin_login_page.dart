@@ -7,6 +7,9 @@ class AdminLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('어드민 로그인'),
+      ),
       body: Center(
           child: ElevatedButton(
         child: const Text('로그인'),
