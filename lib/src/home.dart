@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:vreal_0/src/components/center_constrained_box.dart';
 import 'package:vreal_0/src/models/supplement_category_model.dart';
-import 'package:vreal_0/src/pages/admin_home_page.dart';
+import 'package:vreal_0/src/pages/admin_login_page.dart';
 import 'package:vreal_0/src/pages/compare_supplement_page.dart';
 import 'package:vreal_0/src/repositories/global_repository.dart';
 import 'package:vreal_0/src/repositories/main_contents_repository.dart';
@@ -66,10 +66,10 @@ class Home extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             ...value.mainColumnList.map((e) {
-                              String title = e['title'];
-                              String subtitle = e['subtitle'];
-                              String url = e['url'];
-                              String imageUrl = e['imageUrl'];
+                              String title = e.title;
+                              String subtitle = e.subtitle;
+                              String url = e.url;
+                              String imageUrl = e.imageUrl;
                               return MainColumnUnit(
                                   url: url,
                                   imageUrl: imageUrl,
@@ -89,7 +89,7 @@ class Home extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const AdminHome()));
+                                  builder: (context) => const AdminLogin()));
                         },
                         child: const Text('Admin')),
                     const SizedBox(height: 30),

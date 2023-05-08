@@ -68,6 +68,7 @@ class _ManageMainTitleState extends State<ManageMainTitle> {
                       context
                           .read<GlobalRepository>()
                           .changeCompareSupplementTitle(_controller1.text);
+                      _controller1.text = '';
                     },
                     child: const Text('등록'))
               ],
@@ -117,6 +118,7 @@ class _ManageMainTitleState extends State<ManageMainTitle> {
                       context
                           .read<GlobalRepository>()
                           .changeColumnListTitle(_controller2.text);
+                      _controller2.text = '';
                     },
                     child: const Text('등록'))
               ],

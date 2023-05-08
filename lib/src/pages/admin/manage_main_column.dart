@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:vreal_0/src/components/delete_confirm_alert.dart';
-import 'package:vreal_0/src/repository/main_contents_repository.dart';
+import 'package:vreal_0/src/repositories/main_contents_repository.dart';
 
 class ManageMainColumn extends StatelessWidget {
   const ManageMainColumn({super.key});
@@ -41,14 +41,14 @@ class ManageMainColumn extends StatelessWidget {
                               leading: SizedBox(
                                 width: 50,
                                 child: Image.network(
-                                  e['imageUrl'],
+                                  e.imageUrl,
                                   width: 50,
                                   height: 50,
                                   fit: BoxFit.cover,
                                 ),
                               ),
-                              title: Text(e['title']),
-                              subtitle: Text(e['subtitle']),
+                              title: Text(e.title),
+                              subtitle: Text(e.subtitle),
                               trailing: IconButton(
                                 icon: const Icon(
                                   Icons.remove_circle,
@@ -63,13 +63,13 @@ class ManageMainColumn extends StatelessWidget {
                                           Navigator.pop(context);
                                         },
                                         deleteFunction: () {
-                                          value.removeColumn(e['index']);
+                                          value.removeColumn(e.index);
                                           Navigator.pop(context);
                                         },
                                       );
                                     },
                                   );
-                                  debugPrint('${e['title']} Column is deleted');
+                                  debugPrint('${e.title} Column is deleted');
                                 },
                               ),
                             ))
@@ -184,6 +184,10 @@ class ManageMainColumn extends StatelessWidget {
                               urlController.text,
                               imageUrlController.text,
                             );
+                        titleController.text = '';
+                        subtitleController.text = '';
+                        urlController.text = '';
+                        imageUrlController.text = '';
                       },
                       child: const Text('등록'))
                 ],
