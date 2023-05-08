@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:vreal_0/src/repository/global_repository.dart';
+import 'package:vreal_0/src/repositories/global_repository.dart';
 
 class ManageMainTitle extends StatefulWidget {
   const ManageMainTitle({super.key});

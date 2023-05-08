@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:vreal_0/src/repository/global_repository.dart';
+import 'package:vreal_0/src/repositories/global_repository.dart';
 
 class ManageSupplementCategory extends StatelessWidget {
   const ManageSupplementCategory({super.key});
@@ -36,26 +36,26 @@ class ManageSupplementCategory extends StatelessWidget {
                                 width: 50,
                                 height: 50,
                                 child: Image.network(
-                                  e['imageUrl'],
+                                  e.imageUrl,
                                   width: 50,
                                   height: 50,
                                   fit: BoxFit.cover,
                                 )),
-                            title: Text(e['title']),
+                            title: Text(e.title),
                             subtitle: Text(
-                              e['imageUrl'],
+                              e.imageUrl,
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                             ),
-                            trailing: e['title'] == '블랙마카' ||
-                                    e['title'] == '아르기닌' ||
-                                    e['title'] == '쏘팔메토' ||
-                                    e['title'] == '아연'
+                            trailing: e.title == '블랙마카' ||
+                                    e.title == '아르기닌' ||
+                                    e.title == '쏘팔메토' ||
+                                    e.title == '아연'
                                 ? null
                                 : IconButton(
                                     icon: const Icon(Icons.delete),
                                     onPressed: () {
-                                      value.removeCategory(e['index']);
+                                      value.removeCategory(e.index);
                                     },
                                   ),
                           ))
