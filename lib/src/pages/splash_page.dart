@@ -14,7 +14,7 @@ class _SplashPageState extends State<SplashPage> {
     WidgetsBinding.instance.addPostFrameCallback(
       (_) async {
         debugPrint('Splash Start');
-        await Future.delayed(const Duration(seconds: 2));
+        await Future.delayed(const Duration(milliseconds: 1500));
         // ignore: use_build_context_synchronously
         Navigator.push(
           context,

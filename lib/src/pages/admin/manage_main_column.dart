@@ -79,118 +79,96 @@ class ManageMainColumn extends StatelessWidget {
                 },
               ),
               const SizedBox(height: 20),
-              // 텍스트필트
-              const Align(
-                alignment: Alignment.bottomLeft,
-                child: Text(
-                  '새 칼럼 등록하기',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
+              //입력창
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  border: Border.all(color: Colors.black26, width: 1),
                 ),
-              ),
-              Row(
-                children: [
-                  const SizedBox(
-                      width: 90,
+                padding:
+                    const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    // 텍스트필트
+                    Align(
+                      alignment: Alignment.bottomLeft,
                       child: Text(
-                        '칼럼 타이틀',
+                        '새 칼럼 등록하기',
                         style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.grey),
-                      )),
-                  const SizedBox(width: 10),
-                  Expanded(
-                    child: TextField(
-                      controller: titleController,
-                      decoration: const InputDecoration(hintText: '칼럼 타이틀 입력'),
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  const SizedBox(
-                      width: 90,
-                      child: Text(
-                        '서브타이틀',
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.grey),
-                      )),
-                  const SizedBox(width: 10),
-                  Expanded(
-                    child: TextField(
-                      controller: subtitleController,
-                      decoration: const InputDecoration(hintText: '서브타이틀 입력'),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: TextField(
+                            controller: titleController,
+                            decoration: const InputDecoration(
+                                hintText: '칼럼 타이틀 입력', labelText: '컬럼 타이틀 입력'),
+                          ),
+                        ),
+                      ],
                     ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  const SizedBox(
-                      width: 90,
-                      child: Text(
-                        '칼럼 URL',
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.grey),
-                      )),
-                  const SizedBox(width: 10),
-                  Expanded(
-                    child: TextField(
-                      controller: urlController,
-                      decoration: const InputDecoration(hintText: '칼럼 URL 입력'),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: TextField(
+                            controller: subtitleController,
+                            decoration: const InputDecoration(
+                                hintText: '서브타이틀 입력', labelText: '서브타이틀 입력'),
+                          ),
+                        ),
+                      ],
                     ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  const SizedBox(
-                      width: 90,
-                      child: Text(
-                        '이미지 URL',
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.grey),
-                      )),
-                  const SizedBox(width: 10),
-                  Expanded(
-                    child: TextField(
-                      controller: imageUrlController,
-                      decoration: const InputDecoration(hintText: '이미지 URL 입력'),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: TextField(
+                            controller: urlController,
+                            decoration: const InputDecoration(
+                                hintText: '칼럼 URL 입력', labelText: '칼럼 URL 입력'),
+                          ),
+                        ),
+                      ],
                     ),
-                  ),
-                ],
+                    Row(
+                      children: [
+                        Expanded(
+                          child: TextField(
+                            controller: imageUrlController,
+                            decoration: const InputDecoration(
+                                hintText: '이미지 URL 입력',
+                                labelText: '이미지 URL 입력'),
+                          ),
+                        ),
+                      ],
+                    ),
+                    // 등록 버튼
+                    ElevatedButton(
+                        onPressed: () {
+                          debugPrint('등록 is Clciked');
+
+                          context.read<MainContentsRepository>().addColumn(
+                                titleController.text,
+                                subtitleController.text,
+                                urlController.text,
+                                imageUrlController.text,
+                              );
+                          titleController.text = '';
+                          subtitleController.text = '';
+                          urlController.text = '';
+                          imageUrlController.text = '';
+                        },
+                        child: const Text('등록'))
+                  ],
+                ),
               ),
               // 버튼
               Row(
-                children: [
-                  const Spacer(),
-                  ElevatedButton(
-                      onPressed: () {
-                        debugPrint('등록 is Clciked');
-
-                        context.read<MainContentsRepository>().addColumn(
-                              titleController.text,
-                              subtitleController.text,
-                              urlController.text,
-                              imageUrlController.text,
-                            );
-                        titleController.text = '';
-                        subtitleController.text = '';
-                        urlController.text = '';
-                        imageUrlController.text = '';
-                      },
-                      child: const Text('등록'))
-                ],
+                children: [],
               )
             ],
           ),

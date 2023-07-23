@@ -55,6 +55,19 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.white,
             primarySwatch: Colors.grey,
             brightness: Brightness.light),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ButtonStyle(
+            shape: MaterialStatePropertyAll(
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            ),
+            textStyle: const MaterialStatePropertyAll(
+                TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+            padding: const MaterialStatePropertyAll(
+                EdgeInsets.symmetric(vertical: 20)),
+            backgroundColor: MaterialStateProperty.all(Colors.black),
+            foregroundColor: MaterialStateProperty.all(Colors.white),
+          ),
+        ),
       ),
       title: 'vreal',
       home: const SplashPage(),
