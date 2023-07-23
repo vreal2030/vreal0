@@ -33,7 +33,7 @@ class _SplashPageState extends State<SplashPage> {
       backgroundColor: Colors.white,
       body: Center(
         child: Image.asset(
-          'icon/icon.png',
+          'assets/icon/icon.png',
           width: MediaQuery.of(context).size.width > 450
               ? 450 * 0.7
               : MediaQuery.of(context).size.width * 0.7,

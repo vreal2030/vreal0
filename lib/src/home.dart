@@ -18,7 +18,7 @@ class Home extends StatelessWidget {
         appBar: AppBar(
           centerTitle: false,
           title: const Text(
-            'vreal',
+            'vreal.',
             style: TextStyle(
                 fontWeight: FontWeight.w900, fontSize: 24, letterSpacing: -1),
           ),
