@@ -42,6 +42,7 @@ class MyApp extends StatelessWidget {
       // debugShowCheckedModeBanner: false,
       color: Colors.white,
       theme: ThemeData(
+        // scaffoldBackgroundColor: Colors.white,
         materialTapTargetSize: MaterialTapTargetSize.padded,
         appBarTheme: const AppBarTheme(
             backgroundColor: Colors.white,
@@ -52,8 +53,8 @@ class MyApp extends StatelessWidget {
             )),
         fontFamily: 'Pretendard',
         colorScheme: ColorScheme.fromSwatch(
-            backgroundColor: Colors.white,
             primarySwatch: Colors.grey,
+            backgroundColor: Colors.white,
             brightness: Brightness.light),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ButtonStyle(

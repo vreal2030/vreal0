@@ -11,6 +11,7 @@ class ManageSupplementCategory extends StatelessWidget {
     TextEditingController categoryNameController = TextEditingController();
     TextEditingController imageUrlController = TextEditingController();
     return Scaffold(
+      backgroundColor: Colors.grey.shade100,
       appBar: AppBar(
         title: const Text('영양제 비교 카테고리 관리'),
         centerTitle: false,
@@ -26,8 +27,8 @@ class ManageSupplementCategory extends StatelessWidget {
                 builder: (context, value, child) {
                   return Container(
                     decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
                       color: Colors.white,
-                      border: Border.all(color: Colors.black26, width: 1),
                     ),
                     padding: const EdgeInsets.symmetric(
                         vertical: 10, horizontal: 20),
@@ -81,74 +82,53 @@ class ManageSupplementCategory extends StatelessWidget {
                 },
               ),
               const SizedBox(height: 20),
-              // 새 카테고리 등록하기
-              const Align(
-                alignment: Alignment.bottomLeft,
-                child: Text(
-                  '새 카테고리 등록하기',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.white,
                 ),
-              ),
-              // 텍스트필트
-              Row(
-                children: [
-                  const SizedBox(
-                      width: 90,
-                      child: Text(
-                        '카테고리명',
-                        style: TextStyle(
-                            fontSize: 16,
+                padding:
+                    const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      // 새 카테고리 등록하기
+                      const Align(
+                        alignment: Alignment.bottomLeft,
+                        child: Text(
+                          '새 카테고리 등록하기',
+                          style: TextStyle(
+                            fontSize: 20,
                             fontWeight: FontWeight.bold,
-                            color: Colors.grey),
-                      )),
-                  const SizedBox(width: 10),
-                  Expanded(
-                    child: TextField(
-                      controller: categoryNameController,
-                      decoration:
-                          const InputDecoration(hintText: '신규 카테고리명 입력'),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  const SizedBox(
-                      width: 90,
-                      child: Text(
-                        '이미지 URL',
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.grey),
-                      )),
-                  const SizedBox(width: 10),
-                  Expanded(
-                    child: TextField(
-                      controller: imageUrlController,
-                      decoration: const InputDecoration(hintText: '이미지 URL 입력'),
-                    ),
-                  ),
-                ],
-              ),
-              // 버튼
-              Row(
-                children: [
-                  const Spacer(),
-                  ElevatedButton(
-                      onPressed: () {
-                        debugPrint('등록 is Clciked');
-                        context.read<GlobalRepository>().createCategory(
-                            categoryNameController.text,
-                            imageUrlController.text);
-                        categoryNameController.text = '';
-                        imageUrlController.text = '';
-                      },
-                      child: const Text('등록'))
-                ],
+                          ),
+                        ),
+                      ),
+                      // 텍스트필트
+                      TextField(
+                        controller: categoryNameController,
+                        decoration: const InputDecoration(
+                          hintText: '신규 카테고리명 입력',
+                          labelText: '신규 카테고리명 입력',
+                        ),
+                      ),
+                      TextField(
+                        controller: imageUrlController,
+                        decoration: const InputDecoration(
+                            hintText: '이미지 URL 입력', labelText: '이미지 URL 입력'),
+                      ),
+                      const SizedBox(height: 20),
+                      // 버튼
+                      ElevatedButton(
+                          onPressed: () {
+                            debugPrint('등록 is Clciked');
+                            context.read<GlobalRepository>().createCategory(
+                                categoryNameController.text,
+                                imageUrlController.text);
+                            categoryNameController.text = '';
+                            imageUrlController.text = '';
+                          },
+                          child: const Text('등록'))
+                    ]),
               )
             ],
           ),

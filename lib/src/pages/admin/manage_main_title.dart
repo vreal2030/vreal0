@@ -15,6 +15,7 @@ class _ManageMainTitleState extends State<ManageMainTitle> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey.shade100,
       appBar: AppBar(
         title: const Text('메인 타이틀 관리'),
         centerTitle: false,
@@ -24,105 +25,129 @@ class _ManageMainTitleState extends State<ManageMainTitle> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const Text(
-              '영양제비교 타이틀',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-            ),
-            const SizedBox(height: 10),
-            // 현재 리스트
-            Consumer<GlobalRepository>(
-              builder: (context, value, child) {
-                return Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(color: Colors.black26, width: 1),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.white,
+              ),
+              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  const Align(
+                    alignment: Alignment.bottomLeft,
+                    child: Text(
+                      '영양제비교 타이틀',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    ),
                   ),
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                  child: Column(
-                    children: [
-                      Text(
-                        value.compareSupplementTitle,
-                        style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
-                            fontFamily: 'Gmarket Sans'),
-                      )
-                    ],
-                  ),
-                );
-              },
-            ),
-            // 텍스트필트
-            TextField(
-              controller: _controller1,
-              decoration: const InputDecoration(hintText: '신규 타이틀 입력'),
-            ),
-            // 버튼
-            Row(
-              children: [
-                const Spacer(),
-                ElevatedButton(
-                    onPressed: () {
-                      debugPrint('등록 is Clciked');
-                      context
-                          .read<GlobalRepository>()
-                          .changeCompareSupplementTitle(_controller1.text);
-                      _controller1.text = '';
+                  const SizedBox(height: 10),
+                  // 현재 리스트
+                  Consumer<GlobalRepository>(
+                    builder: (context, value, child) {
+                      return Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                        ),
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 10, horizontal: 20),
+                        child: Column(
+                          children: [
+                            Text(
+                              value.compareSupplementTitle,
+                              style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                  fontFamily: 'Gmarket Sans'),
+                            )
+                          ],
+                        ),
+                      );
                     },
-                    child: const Text('등록'))
-              ],
+                  ),
+                  // 텍스트필트
+                  TextField(
+                    controller: _controller1,
+                    decoration: const InputDecoration(hintText: '신규 타이틀 입력'),
+                  ),
+                  const SizedBox(height: 20),
+                  ElevatedButton(
+                      onPressed: () {
+                        debugPrint('등록 is Clciked');
+                        context
+                            .read<GlobalRepository>()
+                            .changeCompareSupplementTitle(_controller1.text);
+                        _controller1.text = '';
+                      },
+                      child: const Text('등록')),
+                  // 버튼
+                ],
+              ),
             ),
+
+            const SizedBox(height: 40),
             //두번째
-            const Text(
-              '칼럼리스트 타이틀',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-            ),
-            const SizedBox(height: 10),
-            // 현재 리스트
-            Consumer<GlobalRepository>(
-              builder: (context, value, child) {
-                return Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(color: Colors.black26, width: 1),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.white,
+              ),
+              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  const Align(
+                    alignment: Alignment.bottomLeft,
+                    child: Text(
+                      '칼럼리스트 타이틀',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    ),
                   ),
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                  child: Column(
-                    children: [
-                      Text(
-                        value.columnListTitle,
-                        style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
-                            fontFamily: 'Gmarket Sans'),
-                      )
-                    ],
-                  ),
-                );
-              },
-            ),
-            // 텍스트필트
-            TextField(
-              controller: _controller2,
-              decoration: const InputDecoration(hintText: '신규 타이틀 입력'),
-            ),
-            // 버튼
-            Row(
-              children: [
-                const Spacer(),
-                ElevatedButton(
-                    onPressed: () {
-                      debugPrint('등록 is Clciked');
-                      context
-                          .read<GlobalRepository>()
-                          .changeColumnListTitle(_controller2.text);
-                      _controller2.text = '';
+                  const SizedBox(height: 10),
+                  // 현재 리스트
+                  Consumer<GlobalRepository>(
+                    builder: (context, value, child) {
+                      return Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                        ),
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 10, horizontal: 20),
+                        child: Column(
+                          children: [
+                            Text(
+                              value.columnListTitle,
+                              style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                  fontFamily: 'Gmarket Sans'),
+                            )
+                          ],
+                        ),
+                      );
                     },
-                    child: const Text('등록'))
-              ],
-            )
+                  ),
+                  // 텍스트필트
+                  TextField(
+                    controller: _controller2,
+                    decoration: const InputDecoration(hintText: '신규 타이틀 입력'),
+                  ),
+                  const SizedBox(height: 20),
+                  // 버튼
+                  ElevatedButton(
+                      onPressed: () {
+                        debugPrint('등록 is Clciked');
+                        context
+                            .read<GlobalRepository>()
+                            .changeColumnListTitle(_controller2.text);
+                        _controller2.text = '';
+                      },
+                      child: const Text('등록'))
+                ],
+              ),
+            ),
           ],
         ),
       ),

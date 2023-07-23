@@ -15,6 +15,7 @@ class ManageMainColumn extends StatelessWidget {
     TextEditingController imageUrlController = TextEditingController();
 
     return Scaffold(
+      backgroundColor: Colors.grey.shade100,
       appBar: AppBar(
         title: const Text('메인 칼럼 관리'),
         centerTitle: false,
@@ -30,8 +31,8 @@ class ManageMainColumn extends StatelessWidget {
                 builder: (context, value, child) {
                   return Container(
                     decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
                       color: Colors.white,
-                      border: Border.all(color: Colors.black26, width: 1),
                     ),
                     padding: const EdgeInsets.symmetric(
                         vertical: 10, horizontal: 20),
@@ -84,6 +85,7 @@ class ManageMainColumn extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   color: Colors.white,
+                  //
                 ),
                 padding:
                     const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
