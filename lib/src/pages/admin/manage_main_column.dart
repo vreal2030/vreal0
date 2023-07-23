@@ -82,8 +82,8 @@ class ManageMainColumn extends StatelessWidget {
               //입력창
               Container(
                 decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
                   color: Colors.white,
-                  border: Border.all(color: Colors.black26, width: 1),
                 ),
                 padding:
                     const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
@@ -91,7 +91,7 @@ class ManageMainColumn extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     // 텍스트필트
-                    Align(
+                    const Align(
                       alignment: Alignment.bottomLeft,
                       child: Text(
                         '새 칼럼 등록하기',
@@ -146,6 +146,7 @@ class ManageMainColumn extends StatelessWidget {
                         ),
                       ],
                     ),
+                    const SizedBox(height: 20),
                     // 등록 버튼
                     ElevatedButton(
                         onPressed: () {
@@ -166,10 +167,6 @@ class ManageMainColumn extends StatelessWidget {
                   ],
                 ),
               ),
-              // 버튼
-              Row(
-                children: [],
-              )
             ],
           ),
         ),
