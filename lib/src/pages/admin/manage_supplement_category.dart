@@ -93,13 +93,16 @@ class ManageSupplementCategory extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       // 새 카테고리 등록하기
-                      const Align(
-                        alignment: Alignment.bottomLeft,
-                        child: Text(
-                          '새 카테고리 등록하기',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
+                      const Padding(
+                        padding: EdgeInsets.symmetric(vertical: 5),
+                        child: Align(
+                          alignment: Alignment.bottomLeft,
+                          child: Text(
+                            '새 카테고리 등록하기',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ),

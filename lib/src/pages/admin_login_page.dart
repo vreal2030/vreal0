@@ -10,17 +10,24 @@ class AdminLogin extends StatelessWidget {
       appBar: AppBar(
         title: const Text('어드민 로그인'),
       ),
-      body: Center(
-          child: ElevatedButton(
-        child: const Text('로그인'),
-        onPressed: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const AdminHome(),
-              ));
-        },
-      )),
+      body: Padding(
+          padding: EdgeInsets.all(20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                child: const Text('로그인'),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const AdminHome(),
+                      ));
+                },
+              ),
+            ],
+          )),
     );
   }
 }

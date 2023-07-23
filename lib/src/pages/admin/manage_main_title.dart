@@ -34,12 +34,15 @@ class _ManageMainTitleState extends State<ManageMainTitle> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  const Align(
-                    alignment: Alignment.bottomLeft,
-                    child: Text(
-                      '영양제비교 타이틀',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child: Align(
+                      alignment: Alignment.bottomLeft,
+                      child: Text(
+                        '영양제비교 타이틀',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 20),
+                      ),
                     ),
                   ),
                   const SizedBox(height: 10),
@@ -48,8 +51,9 @@ class _ManageMainTitleState extends State<ManageMainTitle> {
                     builder: (context, value, child) {
                       return Container(
                         decoration: BoxDecoration(
-                          color: Colors.white,
-                        ),
+                            color: Colors.grey.shade50,
+                            border:
+                                Border.all(color: Colors.black12, width: 1)),
                         padding: const EdgeInsets.symmetric(
                             vertical: 10, horizontal: 20),
                         child: Column(
@@ -86,7 +90,7 @@ class _ManageMainTitleState extends State<ManageMainTitle> {
               ),
             ),
 
-            const SizedBox(height: 40),
+            const SizedBox(height: 10),
             //두번째
             Container(
               decoration: BoxDecoration(
@@ -97,12 +101,15 @@ class _ManageMainTitleState extends State<ManageMainTitle> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  const Align(
-                    alignment: Alignment.bottomLeft,
-                    child: Text(
-                      '칼럼리스트 타이틀',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    child: Align(
+                      alignment: Alignment.bottomLeft,
+                      child: Text(
+                        '칼럼리스트 타이틀',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 20),
+                      ),
                     ),
                   ),
                   const SizedBox(height: 10),
@@ -111,7 +118,8 @@ class _ManageMainTitleState extends State<ManageMainTitle> {
                     builder: (context, value, child) {
                       return Container(
                         decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: Colors.grey.shade50,
+                          border: Border.all(color: Colors.black12, width: 1),
                         ),
                         padding: const EdgeInsets.symmetric(
                             vertical: 10, horizontal: 20),
